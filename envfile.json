@@ -1,0 +1,8 @@
+{
+    "DATABASE":{
+        "USERNAME":"postgres",
+        "PASSWORD":"pass",
+        "PORT":5433,
+        "DATABASE":"server_test"
+    }
+}

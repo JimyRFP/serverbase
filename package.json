@@ -1,0 +1,29 @@
+{
+  "name": "globofy",
+  "version": "1.0.4",
+  "main": "dist/globofy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "globofyinstall": "./install.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/session": "github:fastify/session",
+    "argon2": "^0.41.1",
+    "axios": "^1.7.9",
+    "colors-cli": "^1.0.33",
+    "fastify": "^5.2.1",
+    "pg": "^8.13.3",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4"
+  }
+}
