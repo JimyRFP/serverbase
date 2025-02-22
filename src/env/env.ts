@@ -23,7 +23,7 @@ const ENV={
         host:(custom_env.DATABASE&&custom_env.DATABASE.HOST)||(process.env.DATABASE_HOST?process.env.DATABASE_HOST:'localhost'),
         database:(custom_env.DATABASE&&custom_env.DATABASE.DATABASE)||(process.env.DATABASE_DATABASE||'postgres'),
         username:(custom_env.DATABASE&&custom_env.DATABASE.USERNAME)||(process.env.DATABASE_USERNAME?process.env.DATABASE_USERNAME:'postgres'),
-        password:(custom_env.DATABASE&&custom_env.DATABASE.PASSWORD)||process.env.DATABASE_PASSWORD?process.env.DATABASE_PASSWORD:'',
+        password:(custom_env.DATABASE&&custom_env.DATABASE.PASSWORD)||(process.env.DATABASE_PASSWORD?process.env.DATABASE_PASSWORD:''),
     },
     SESSION_SECRET:process.env.SESSION_SECRET?process.env.SESSION_SECRET:"secret key session you must change this. VERY IMPORTANT.",
 };

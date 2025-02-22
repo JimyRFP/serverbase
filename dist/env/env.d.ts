@@ -8,7 +8,7 @@ declare const ENV: {
         host: any;
         database: any;
         username: any;
-        password: string | undefined;
+        password: any;
     };
     SESSION_SECRET: string;
 };
