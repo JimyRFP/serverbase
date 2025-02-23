@@ -5,6 +5,7 @@ import { DataValidationType } from "../../middlewares/datavalidation/types";
 import { BaseServerUser } from "../../models/user";
 import { JSONResponse } from "../../utils/response/json";
 import { argon2CheckPassword } from "../../password/argon2";
+import { sessionSetUser } from "../session/set";
 const loginUserSchema={
     type:'object',
     required:['email','password'],
@@ -38,7 +39,7 @@ export function userLoginRoute(path:string,app:FastifyInstance){
           }
           user.last_action=new Date();
           await user.save();
-          req.session.user=user;
+          sessionSetUser(req,user);
           return rep.status(200).send(JSONResponse({email:user.email,id:user.id}));
        }catch(e){
           return sendInternalError(req,rep,e);

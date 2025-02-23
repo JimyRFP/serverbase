@@ -16,6 +16,7 @@ const types_1 = require("../../middlewares/datavalidation/types");
 const user_1 = require("../../models/user");
 const json_1 = require("../../utils/response/json");
 const argon2_1 = require("../../password/argon2");
+const set_1 = require("../session/set");
 const loginUserSchema = {
     type: 'object',
     required: ['email', 'password'],
@@ -42,7 +43,7 @@ function userLoginRoute(path, app) {
             }
             user.last_action = new Date();
             yield user.save();
-            req.session.user = user;
+            (0, set_1.sessionSetUser)(req, user);
             return rep.status(200).send((0, json_1.JSONResponse)({ email: user.email, id: user.id }));
         }
         catch (e) {
