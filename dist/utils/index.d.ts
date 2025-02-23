@@ -8,6 +8,7 @@ declare const _default: {
         isValidName: typeof import("./validators/name").isValidName;
         isValidEmail: typeof import("./validators/email").isValidEmail;
         isValidPassword: typeof import("./validators/password").isValidPassword;
+        isValidCPF: typeof import("./validators/cpf").isValidCPF;
     };
     response: {
         JSONResponse: typeof import("./response/json").JSONResponse;

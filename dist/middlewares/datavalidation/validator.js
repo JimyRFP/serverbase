@@ -15,6 +15,7 @@ const name_1 = require("../../utils/validators/name");
 const json_1 = require("../../utils/response/json");
 const email_1 = require("../../utils/validators/email");
 const password_1 = require("../../utils/validators/password");
+const cpf_1 = require("../../utils/validators/cpf");
 function middlewareValidateParams(request, reply) {
     return __awaiter(this, void 0, void 0, function* () {
         const config = this;
@@ -27,6 +28,11 @@ function middlewareValidateParams(request, reply) {
             if (!val)
                 continue;
             switch (val.type) {
+                case types_1.DataValidationType.cpf:
+                    if (!(0, cpf_1.isValidCPF)(obj[1])) {
+                        return reply.status(400).send((0, json_1.JSONResponse)({}, `Param ${obj[0]} must be a valid cpf`));
+                    }
+                    break;
                 case types_1.DataValidationType.name:
                     if (!(0, name_1.isValidName)(obj[1])) {
                         return reply.status(400).send((0, json_1.JSONResponse)({}, `Param ${obj[0]} must be a valid Name`));

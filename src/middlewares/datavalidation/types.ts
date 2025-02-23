@@ -3,6 +3,7 @@ export enum DataValidationType{
     email='email',
     password='password',
     number='number',
+    cpf='cpf',
 }
 
 export interface ValidateParamsConfig{

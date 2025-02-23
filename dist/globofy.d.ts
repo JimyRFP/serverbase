@@ -21,6 +21,7 @@ declare const _default: {
             isValidName: typeof import("./utils/validators/name").isValidName;
             isValidEmail: typeof import("./utils/validators/email").isValidEmail;
             isValidPassword: typeof import("./utils/validators/password").isValidPassword;
+            isValidCPF: typeof import("./utils/validators/cpf").isValidCPF;
         };
         response: {
             JSONResponse: typeof import("./utils/response/json").JSONResponse;

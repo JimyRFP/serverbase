@@ -7,4 +7,5 @@ var DataValidationType;
     DataValidationType["email"] = "email";
     DataValidationType["password"] = "password";
     DataValidationType["number"] = "number";
+    DataValidationType["cpf"] = "cpf";
 })(DataValidationType || (exports.DataValidationType = DataValidationType = {}));

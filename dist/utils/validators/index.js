@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const cpf_1 = require("./cpf");
 const email_1 = require("./email");
 const name_1 = require("./name");
 const password_1 = require("./password");
 exports.default = {
     isValidName: name_1.isValidName,
     isValidEmail: email_1.isValidEmail,
-    isValidPassword: password_1.isValidPassword
+    isValidPassword: password_1.isValidPassword,
+    isValidCPF: cpf_1.isValidCPF,
 };

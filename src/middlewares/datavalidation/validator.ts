@@ -4,6 +4,7 @@ import { isValidName } from "../../utils/validators/name";
 import { JSONResponse } from "../../utils/response/json";
 import { isValidEmail } from "../../utils/validators/email";
 import { isValidPassword } from "../../utils/validators/password";
+import { isValidCPF } from "../../utils/validators/cpf";
 
 export async function middlewareValidateParams(this:ValidateParamsConfig,request:FastifyRequest,reply:FastifyReply):Promise<void>{
      const config=this;
@@ -16,6 +17,11 @@ export async function middlewareValidateParams(this:ValidateParamsConfig,request
           if(!val)
             continue;
           switch(val.type){
+              case DataValidationType.cpf:
+                  if(!isValidCPF(obj[1])){
+                    return reply.status(400).send(JSONResponse({},`Param ${obj[0]} must be a valid cpf`));
+                  }
+                  break;
               case DataValidationType.name:
                   if(!isValidName(obj[1])){
                       return reply.status(400).send(JSONResponse({},`Param ${obj[0]} must be a valid Name`));
