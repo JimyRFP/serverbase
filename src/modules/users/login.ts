@@ -14,7 +14,7 @@ const loginUserSchema={
         password:{type:'string'},
     }
 }
-
+ 
 declare module 'fastify'{
     interface Session{
         user?:BaseServerUser

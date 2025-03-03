@@ -1,8 +1,13 @@
 import { initSession } from "./session/session";
-import { registerUserModule } from "./users/register";
+import { sessionDeleteUser, sessionSetUser } from "./session/set";
+
 import { moduleInitUsers } from "./users/users";
 
 export default{
      user:moduleInitUsers,
      session:initSession,
+     sessionFuncions:{
+           sessionSetUser,
+           sessionDeleteUser,
+     }
 }

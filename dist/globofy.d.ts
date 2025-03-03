@@ -5,6 +5,9 @@ declare const _default: {
     modules: {
         user: typeof import("./modules/users/users").moduleInitUsers;
         session: typeof import("./modules/session/session").initSession;
+        sessionFuncions: {
+            sessionSetUser: typeof import("./modules/session/set").sessionSetUser;
+        };
     };
     dataBase: {
         sequelizeInstance: import("sequelize").Sequelize;
