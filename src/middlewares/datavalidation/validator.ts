@@ -5,6 +5,7 @@ import { JSONResponse } from "../../utils/response/json";
 import { isValidEmail } from "../../utils/validators/email";
 import { isValidPassword } from "../../utils/validators/password";
 import { isValidCPF } from "../../utils/validators/cpf";
+import { isValidBrDate } from "../../utils/validators/brdate";
 
 export async function middlewareValidateParams(this:ValidateParamsConfig,request:FastifyRequest,reply:FastifyReply):Promise<void>{
      const config=this;
@@ -35,7 +36,13 @@ export async function middlewareValidateParams(this:ValidateParamsConfig,request
               case DataValidationType.password:
                  if(!isValidPassword(obj[1])){
                     return reply.status(400).send(JSONResponse({},`Param ${obj[0]} must be a valid password, have equal or more then 7 chars.`)); 
-                 }    
+                 }   
+                 break;
+              case DataValidationType.brDate:
+                 if(!isValidBrDate(obj[1])){
+                  return reply.status(400).send(JSONResponse({},`Param ${obj[0]} must be a valid BR DATE dd/mm/yyyy.`)); 
+                 }
+                 break;    
           }
      }
 }

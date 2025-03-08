@@ -1,3 +1,4 @@
+import { isValidBrDate } from "./brdate";
 import { isValidCPF } from "./cpf";
 import { isValidEmail } from "./email";
 import { isValidName } from "./name";
@@ -8,4 +9,5 @@ export default{
     isValidEmail,
     isValidPassword,
     isValidCPF,
+    isValidBrDate,
 }

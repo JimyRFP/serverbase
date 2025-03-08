@@ -4,6 +4,7 @@ export enum DataValidationType{
     password='password',
     number='number',
     cpf='cpf',
+    brDate='br_date',
 }
 
 export interface ValidateParamsConfig{

@@ -16,6 +16,7 @@ const json_1 = require("../../utils/response/json");
 const email_1 = require("../../utils/validators/email");
 const password_1 = require("../../utils/validators/password");
 const cpf_1 = require("../../utils/validators/cpf");
+const brdate_1 = require("../../utils/validators/brdate");
 function middlewareValidateParams(request, reply) {
     return __awaiter(this, void 0, void 0, function* () {
         const config = this;
@@ -47,6 +48,12 @@ function middlewareValidateParams(request, reply) {
                     if (!(0, password_1.isValidPassword)(obj[1])) {
                         return reply.status(400).send((0, json_1.JSONResponse)({}, `Param ${obj[0]} must be a valid password, have equal or more then 7 chars.`));
                     }
+                    break;
+                case types_1.DataValidationType.brDate:
+                    if (!(0, brdate_1.isValidBrDate)(obj[1])) {
+                        return reply.status(400).send((0, json_1.JSONResponse)({}, `Param ${obj[0]} must be a valid BR DATE dd/mm/yyyy.`));
+                    }
+                    break;
             }
         }
     });

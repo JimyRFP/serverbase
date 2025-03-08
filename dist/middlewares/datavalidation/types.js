@@ -8,4 +8,5 @@ var DataValidationType;
     DataValidationType["password"] = "password";
     DataValidationType["number"] = "number";
     DataValidationType["cpf"] = "cpf";
+    DataValidationType["brDate"] = "br_date";
 })(DataValidationType || (exports.DataValidationType = DataValidationType = {}));

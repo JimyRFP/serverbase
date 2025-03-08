@@ -8,5 +8,6 @@ exports.default = {
     session: session_1.initSession,
     sessionFuncions: {
         sessionSetUser: set_1.sessionSetUser,
+        sessionDeleteUser: set_1.sessionDeleteUser,
     }
 };
