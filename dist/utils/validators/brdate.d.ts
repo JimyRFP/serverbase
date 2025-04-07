@@ -1,1 +1,1 @@
-export declare function isValidBrDate(str: any): boolean;
+export declare function isValidBrDate(bt: any): boolean;

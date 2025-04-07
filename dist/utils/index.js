@@ -32,14 +32,19 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("./path");
 const string = __importStar(require("./string/index"));
 const validators = __importStar(require("./validators/index"));
 const response = __importStar(require("./response/index"));
+const sanitizer_1 = __importDefault(require("./sanitizer"));
 exports.default = {
     normalizePath: path_1.normalizePath,
     string: string.default,
     validators: validators.default,
     response: response.default,
+    sanitizer: sanitizer_1.default,
 };

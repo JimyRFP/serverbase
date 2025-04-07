@@ -14,6 +14,10 @@ export async function middlewareCheckUserIsAuthenticated(req:FastifyRequest,repl
        if(!req.session.user){
            return reply.status(401).send(JSONResponse({},"User must be logged"));
        }
+       const user=req.session.user;
+       if(!user.is_active||user.blocked){
+          return reply.status(403).send(JSONResponse({},"User blocked, send email to suport"));
+       }
        req.user=req.session.user;
        req.user.last_action=new Date();
        await req.user.save();

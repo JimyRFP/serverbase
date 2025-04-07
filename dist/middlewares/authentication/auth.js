@@ -18,6 +18,10 @@ function middlewareCheckUserIsAuthenticated(req, reply) {
             if (!req.session.user) {
                 return reply.status(401).send((0, json_1.JSONResponse)({}, "User must be logged"));
             }
+            const user = req.session.user;
+            if (!user.is_active || user.blocked) {
+                return reply.status(403).send((0, json_1.JSONResponse)({}, "User blocked, send email to suport"));
+            }
             req.user = req.session.user;
             req.user.last_action = new Date();
             yield req.user.save();

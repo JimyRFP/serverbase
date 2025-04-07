@@ -32,6 +32,9 @@ declare const _default: {
             JSONResponse: typeof import("./utils/response/json").JSONResponse;
             sendInternalError: typeof import("./utils/response/500response").sendInternalError;
         };
+        sanitizer: {
+            keepJustNumbers: typeof import("./utils/sanitizer/justnumbers").keepJustNumbers;
+        };
     };
     password: {
         argon2: {

@@ -1,6 +1,6 @@
 {
   "name": "globofy",
-  "version": "1.0.10",
+  "version": "1.1.1",
   "main": "dist/globofy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

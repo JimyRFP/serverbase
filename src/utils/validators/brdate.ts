@@ -1,21 +1,32 @@
-export function isValidBrDate(str:any):boolean{
-   if(typeof str!=='string')
-      return false;
-   let checkd=str.split('-');
-   if(checkd.length!=3){
-      checkd=str.split('/');
-   }
-   if(checkd.length!=3)
-      return false;
-   const day=parseInt(checkd[0]);
-   const month=parseInt(checkd[1]);
-   const year=parseInt(checkd[2]);
-   if(day<1||day>31)
-      return false;
-   if(month<1||month>12)
-      return false;
-   if(year<1000||year>3000)
-      return false;  
-   return true;
+export function isValidBrDate(bt:any){
+    if(typeof(bt)!=='string')
+       return false;
+    let div=bt.split('-');
+    if(div.length!==3){
+        div=bt.split('/');
+    }
+    if(div.length!==3)
+         return false;
+    const day=div[0];
+    const month=div[1];
+    const year=div[2];
+    if(day.length!==2||month.length!==2||year.length!==4)
+        return false;
+    const iDay=parseInt(day);
+    const iMonth=parseInt(month);
+    const iYear=parseInt(year);
+    if(iDay<1||iDay>31)
+       return false;
+    if(iMonth<1||iMonth>12)
+       return false;
+    const date=new Date(iYear,iMonth,iDay);
+    const now=new Date();
+    if(isNaN(date.getTime()))
+       return false;
+    if(date.getTime()>now.getTime())
+       return false;
+    return true; 
 }
+
+
 

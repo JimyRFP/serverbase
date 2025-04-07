@@ -15,5 +15,8 @@ declare const _default: {
         JSONResponse: typeof import("./response/json").JSONResponse;
         sendInternalError: typeof import("./response/500response").sendInternalError;
     };
+    sanitizer: {
+        keepJustNumbers: typeof import("./sanitizer/justnumbers").keepJustNumbers;
+    };
 };
 export default _default;
